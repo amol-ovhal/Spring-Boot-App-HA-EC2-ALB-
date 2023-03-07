@@ -31,7 +31,7 @@ resource "aws_internet_gateway" "igw" {
 }
 
 module "publicRouteTable" {
-  source     = "../tf-modules/publicRouteTable/"
+  source     = "../tf-modules/RouteTable/"
   cidr       = "0.0.0.0/0"
   gateway_id = aws_internet_gateway.igw.id
   name       = format("%s-pub", var.env_name)
@@ -40,7 +40,7 @@ module "publicRouteTable" {
 }
 
 module "PublicSubnets" {
-  source             = "../tf-modules/PublicSubnets/"
+  source             = "../tf-modules/Subnets/"
   availability_zones = var.avaialability_zones
   subnet_name        = var.public_subnet_name
   route_table_id     = module.publicRouteTable.id
@@ -50,14 +50,14 @@ module "PublicSubnets" {
 }
 
 module "nat-gateway" {
-  source             = "../tf-modules/nat-gateway/"
+  source             = "../tf-modules/nat/"
   subnets_for_nat_gw = module.PublicSubnets.ids
   nat_name           = var.nat_name
   tags               = var.tags
 }
 
 module "privateRouteTable" {
-  source     = "../tf-modules/privateRouteTable/"
+  source     = "../tf-modules/RouteTable/"
   cidr       = "0.0.0.0/0"
   gateway_id = module.nat-gateway.ngw_id
   name       = format("%s-pvt", var.env_name)
@@ -66,7 +66,7 @@ module "privateRouteTable" {
 }
 
 module "PrivateSubnets" {
-  source             = "../tf-modules/PrivateSubnets/"
+  source             = "../tf-modules/Subnets/"
   availability_zones = var.avaialability_zones
   subnet_name        = var.private_subnet_name
   route_table_id     = module.privateRouteTable.id
@@ -76,7 +76,7 @@ module "PrivateSubnets" {
 }
 
 module "public_web_security_group" {
-  source              = "../tf-modules/public_web_security_group/"
+  source              = "../tf-modules/security_group/"
   enable_whitelist_ip = true
   name_sg             = var.public_web_sg_name
   vpc_id              = aws_vpc.main.id
@@ -105,7 +105,7 @@ module "public_web_security_group" {
 }
 
 module "pub_alb" {
-  source                     = "../tf-modules/pub_alb/"
+  source                     = "../tf-modules/alb/"
   alb_name                   = format("%s-pub-alb", var.env_name)
   internal                   = false
   logs_bucket                = var.logs_bucket
