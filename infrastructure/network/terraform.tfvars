@@ -1,0 +1,11 @@
+cidr_block                 = "173.31.0.0/16"
+vpc_name                   = "demo-vpc"
+env_name                   = "demo"
+nat_name                   = "demo-nat"
+public_subnets_cidr        = ["173.31.0.0/20", "173.31.16.0/20", "173.31.32.0/20"]
+public_subnet_name         = ["demo-pub-subnet-1", "demo-pub-subnet-2", "demo-pub-subnet-3"]
+private_subnets_cidr       = ["173.31.48.0/20", "173.31.64.0/20", "173.31.80.0/20"]
+private_subnet_name        = ["demo-pvt-subnet-1", "demo-pvt-subnet-2", "demo-pvt-subnet-3"]
+avaialability_zones        = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+enable_deletion_protection = false
+public_web_sg_name         = "pub-alb-sg"
