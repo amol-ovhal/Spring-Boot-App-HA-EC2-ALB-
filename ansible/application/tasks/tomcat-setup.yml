@@ -6,10 +6,12 @@
     update_cache: yes
  
 - name: Create a Tomcat User
+  become: yes
   user:
     name: tomcat
  
 - name: Create a Tomcat Group
+  become: yes
   group:
     name: tomcat
  
