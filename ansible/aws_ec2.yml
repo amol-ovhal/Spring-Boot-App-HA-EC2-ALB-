@@ -1,0 +1,17 @@
+---
+plugin: aws_ec2
+
+regions:
+  - ap-south-1
+
+filters:
+  tag:Name: 'demo-application'
+
+keyed_groups:
+- key: tags.component
+  prefix: component
+  separator: "_"
+
+compose:
+  ansible_host: private_ip_address
+...

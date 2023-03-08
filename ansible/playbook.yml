@@ -1,0 +1,4 @@
+---
+- hosts: component_application
+  roles:
+    - role: application

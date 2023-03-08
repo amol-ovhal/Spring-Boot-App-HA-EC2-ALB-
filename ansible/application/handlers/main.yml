@@ -1,0 +1,10 @@
+---
+# handlers file for application
+
+- name: Restarting nginx
+  become: yes
+  service:
+    name: nginx
+    state: restarted
+    daemon_reload: yes
+    enabled: on 

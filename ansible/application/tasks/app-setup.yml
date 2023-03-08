@@ -1,0 +1,17 @@
+- name: Copy app code to node.
+    synchronize:
+      src: "/home/ubuntu/spring3hibernate/"
+      dest: "/home/ubuntu/"
+
+- name: Apply Page Template
+    template:
+      src: default.tpl
+      dest: /etc/nginx/sites-enabled/default
+    notify: Restarting nginx
+
+- name: maven clean package
+    command: mvn -f /home/ubuntu/spring3hibernate/pom.xml clean package
+
+- name: copy war file
+    command: cp {{ remote_warfile }} {{ remote_webapps }}
+
