@@ -1,6 +1,7 @@
-- apt:
+- name: Installing packages
+  apt:
   become: yes
     name: "{{ item }}"
     state: present
     update_cache: yes
-  with_items: "{{ list_of_packages }}"
+  loop: "{{ list_of_packages }}"

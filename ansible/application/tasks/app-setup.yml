@@ -1,7 +1,7 @@
 - name: Copy app code to node.
-    synchronize:
-      src: "/home/ubuntu/spring3hibernate/"
-      dest: "/home/ubuntu/"
+  synchronize:
+    src: "/home/ubuntu/spring3hibernate/"
+    dest: "/home/ubuntu/"
 
 - name: Nginx configuration
   become: yes
@@ -11,9 +11,9 @@
     notify: Restarting nginx
 
 - name: maven clean package
-    command: mvn -f /home/ubuntu/spring3hibernate/pom.xml clean package
+  command: mvn -f /home/ubuntu/spring3hibernate/pom.xml clean package
 
 - name: copy war file
   become: yes
-    command: cp {{ remote_warfile }} {{ remote_webapps }}
+  command: cp {{ remote_warfile }} {{ remote_webapps }}
 
