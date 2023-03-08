@@ -1,7 +1,8 @@
 ---
 # vars file for application
 list_of_packages:
-   - unzip
+   - tomcat9
+   - tomcat9-admin
    - maven
    - nginx
 
