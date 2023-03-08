@@ -25,24 +25,24 @@
 - name: Create a Tomcat Directory
   become: yes
   file:
-    path: /opt/tomcat8
+    path: /opt/tomcat9
     owner: tomcat
     group: tomcat
     mode: 755
     recurse: yes
  
-- name: download & unarchive tomacat8
+- name: download & unarchive tomcat9
   become: yes
   unarchive:
-    src: https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.83/bin/apache-tomcat-8.5.83.tar.gz
-    dest: /opt/tomcat8
+    src: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.56/bin/apache-tomcat-9.0.56.tar.gz
+    dest: /opt/tomcat9
     remote_src: yes
     extra_opts: [--strip-components=1]
  
 - name: Change ownership of tomcat directory
   become: yes
   file:
-    path: /opt/tomacat8
+    path: /opt/tomcat9
     owner: tomcat
     group: tomcat
     mode: "u+rwx,g+rx,o=rx"
@@ -60,12 +60,12 @@
       [Service]
       Type=forking
       User=tomcat
-      Environment="CATALINA_PID=/opt/tomcat8/logs/tomcat.pid"
-      Environment="CATALINA_BASE=/opt/tomcat8"
-      Environment="CATALINA_HOME=/opt/tomcat8"
+      Environment="CATALINA_PID=/opt/tomcat9/logs/tomcat.pid"
+      Environment="CATALINA_BASE=/opt/tomcat9"
+      Environment="CATALINA_HOME=/opt/tomcat9"
       Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
-      ExecStart=/opt/tomcat8/bin/startup.sh
-      ExecStop=/opt/tomcat8/bin/shutdown.sh
+      ExecStart=/opt/tomcat9/bin/startup.sh
+      ExecStop=/opt/tomcat9/bin/shutdown.sh
       Restart=on-abnormal
       [Install]
       WantedBy=multi-user.target
