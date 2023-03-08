@@ -11,7 +11,7 @@
   notify: Restarting nginx
 
 - name: maven clean package
-  command: mvn -f /home/ubuntu/spring3hibernate/ clean package
+  command: mvn clean package
 
 - name: copy war file
   become: yes
