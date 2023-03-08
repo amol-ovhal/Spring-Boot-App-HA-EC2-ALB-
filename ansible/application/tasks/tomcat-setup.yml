@@ -25,7 +25,7 @@
 - name: Create a Tomcat Directory
   become: yes
   file:
-    path: /opt/tomacat8
+    path: /opt/tomcat8
     owner: tomcat
     group: tomcat
     mode: 755
