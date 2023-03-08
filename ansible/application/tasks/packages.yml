@@ -4,5 +4,8 @@
     name: "{{ item }}"
     state: present
     update_cache: yes
-  loop: "{{ packages }}"
+  with_item:
+    - unzip
+    - maven
+    - nginx
 
