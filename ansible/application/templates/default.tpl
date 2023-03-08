@@ -46,14 +46,14 @@ server {
 	server_name _;
 
 	location / {
-		proxy_pass http://127.0.0.1:8080/spring3hibernate;
+		proxy_pass http://127.0.0.1:8080/Spring3HibernateApp;
         # First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		try_files $uri $uri/ =404;
 	}
 
-    location /spring3hibernate {
-        proxy_pass http://127.0.0.1:8080/spring3hibernate;
+    location /Spring3HibernateApp {
+        proxy_pass http://127.0.0.1:8080/Spring3HibernateApp;
     }
 
 	# pass PHP scripts to FastCGI server
