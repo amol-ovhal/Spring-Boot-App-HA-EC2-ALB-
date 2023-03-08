@@ -13,9 +13,10 @@ resource "aws_db_instance" "mysql" {
   username               = "admin"
   password               = "Admin#123"
   db_subnet_group_name   = aws_db_subnet_group.subnet_group.id
+  skip_final_snapshot    = true
 }
 
 resource "aws_db_subnet_group" "subnet_group" {
   name       = "appdb_subnet_group"
-  subnet_ids = [data.terraform_remote_state.network.outputs.pvt_subnet_ids[0], data.terraform_remote_state.network.outputs.pvt_subnet_ids[1]]
+  subnet_ids = [data.terraform_remote_state.network.outputs.public_subnet_ids[0], data.terraform_remote_state.network.outputs.public_subnet_ids[1]]
 }
