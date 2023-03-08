@@ -4,5 +4,5 @@
     name: "{{ item }}"
     state: present
     update_cache: yes
-  loop: "{{ list_of_packages }}"
+  loop: "{{ packages }}"
 
