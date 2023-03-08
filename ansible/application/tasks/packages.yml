@@ -1,6 +1,5 @@
 - name: Installing packages
   apt:
-  become: yes
     name: "{{ item }}"
     state: present
     update_cache: yes
