@@ -1,8 +1,7 @@
 ---
 # tasks file for application
+- include_tasks: "packages.yml"
 
 - include_tasks: "tomcat-setup.yml"
-
-- include_tasks: "packages.yml"
 
 - include_tasks: "app-setup.yml"
