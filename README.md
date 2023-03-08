@@ -33,8 +33,28 @@ Follow best practices while creating infrastructure.
     - Private Route Table with NAT Gateway
     - Public Application Loadbalancer and Security Group
 
-
+![Alt-Text](screenshot/1-1.png)
+```
+```
 ![Alt-Text](screenshot/1.png)
+```
+```
+![Alt-Text](screenshot/1-2.png)
+```
+```
+![Alt-Text](screenshot/1-3.png)
+```
+```
+![Alt-Text](screenshot/1-4.png)
+```
+```
+![Alt-Text](screenshot/1-5.png)
+```
+```
+![Alt-Text](screenshot/1-6.png)
+```
+```
+![Alt-Text](screenshot/1-7.png)
 ```
 ```
 
@@ -45,6 +65,12 @@ Follow best practices while creating infrastructure.
 ![Alt-Text](screenshot/2.png)
 ```
 ```
+![Alt-Text](screenshot/2-2.png)
+```
+```
+![Alt-Text](screenshot/2-3.png)
+```
+```
 
 -   Bastion Host
     -  Created Bastion Host in public subnet for accessing the HA-EC2-ALB setup created in private subnets. 
@@ -52,10 +78,19 @@ Follow best practices while creating infrastructure.
 ![Alt-Text](screenshot/3.png)
 ```
 ```
+![Alt-Text](screenshot/3-2.png)
+```
+```
 
 - SNS Topic And Subscription Creation.
 
 ![Alt-Text](screenshot/4.png)
+```
+```
+![Alt-Text](screenshot/4-2.png)
+```
+```
+![Alt-Text](screenshot/4-3.png)
 ```
 ```
 ![Alt-Text](screenshot/5.png)
@@ -66,6 +101,9 @@ Follow best practices while creating infrastructure.
     - Created RDS MySQL db instance and allowed only internal traffic on mysql port i.e. 3306. 
 
 ![Alt-Text](screenshot/6.png)
+```
+```
+![Alt-Text](screenshot/6-1.png)
 ```
 ```
 ![Alt-Text](screenshot/7.png)
@@ -96,5 +134,3 @@ Follow best practices while creating infrastructure.
 ```
 ```
 ![Alt-Text](screenshot/13.png)
-
-
