@@ -1,5 +1,9 @@
 ---
 # vars file for application
+list_of_packages:
+   - unzip
+   - maven
+   - nginx
 
 remote_warfile: /home/ubuntu/spring3hibernate/target/spring3hibernate.war
 remote_webapps: /var/lib/tomcat9/webapps/

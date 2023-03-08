@@ -1,11 +1,7 @@
-- name: Installing packages
-  apt:
+- apt:
   become: yes
     name: "{{ item }}"
     state: present
     update_cache: yes
-  with_item:
-    - unzip
-    - maven
-    - nginx
+  loop: "{{ list_of_packages }}"
 
