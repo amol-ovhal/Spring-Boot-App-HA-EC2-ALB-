@@ -5,10 +5,10 @@
 
 - name: Nginx configuration
   become: yes
-    template:
-      src: default.tpl
-      dest: /etc/nginx/sites-enabled/default
-    notify: Restarting nginx
+  template:
+    src: default.tpl
+    dest: /etc/nginx/sites-enabled/default
+  notify: Restarting nginx
 
 - name: maven clean package
   command: mvn -f /home/ubuntu/spring3hibernate/pom.xml clean package
