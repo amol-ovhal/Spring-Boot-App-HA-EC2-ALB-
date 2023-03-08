@@ -50,7 +50,7 @@
     state: directory
  
 - name: Creating a service file
-    become: yes
+  become: yes
     copy: 
      content: |-
        [Unit]
