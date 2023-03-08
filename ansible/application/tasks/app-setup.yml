@@ -3,7 +3,8 @@
       src: "/home/ubuntu/spring3hibernate/"
       dest: "/home/ubuntu/"
 
-- name: Apply Page Template
+- name: Nginx configuration
+  become: yes
     template:
       src: default.tpl
       dest: /etc/nginx/sites-enabled/default
@@ -13,5 +14,6 @@
     command: mvn -f /home/ubuntu/spring3hibernate/pom.xml clean package
 
 - name: copy war file
+  become: yes
     command: cp {{ remote_warfile }} {{ remote_webapps }}
 
