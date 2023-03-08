@@ -46,7 +46,7 @@ server {
 	server_name _;
 
 	location / {
-		proxy_pass http://127.0.0.1:8080/Spring3HibernateApp;
+		proxy_pass http://127.0.0.1:8080;
         # First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		try_files $uri $uri/ =404;
