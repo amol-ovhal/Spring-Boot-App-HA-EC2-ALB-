@@ -17,7 +17,6 @@
 - Application should be deployed on auto scaling group created in previous step
 - MySQL database connection should happen
 
-3. Push all your code to private Github repo with documentation on how to run the code and all configurable terraform and ansible properties
 
 Follow best practices while creating infrastructure.
 
