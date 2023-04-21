@@ -1,4 +1,4 @@
-# **Combination of IaaC and and Configuration management tool to deploy application on a demo environment**
+# **Streamlining Spring Boot Deployment on Demo Environment with IaaC and Configuration Management Tool**
 
 
 ## **<u>Task Description</u>** :
